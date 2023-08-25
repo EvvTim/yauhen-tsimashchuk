@@ -5,7 +5,6 @@ const { Link } = User;
 const Head = ({ switchTheme }) => {
   const theme = useTheme();
 
-  console.log(theme);
   return (
     <section className={"head"}>
       <ThemeButton switchTheme={switchTheme} />
