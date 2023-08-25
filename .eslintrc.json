@@ -17,5 +17,48 @@
         "react"
     ],
     "rules": {
+        "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+        "react/react-in-jsx-scope": "off",
+        "prefer-const": "warn",
+        "jsx-a11y/accessible-emoji": "off",
+        "react/prop-types": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "vars": "all",
+                "args": "after-used",
+                "ignoreRestSiblings": false,
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error",
+        "simple-import-sort/exports": "error",
+        "simple-import-sort/imports": [
+            "error",
+            {
+                "groups": [
+                    ["^react", "^@?\\w"],
+                    ["^app(/.*|$)"],
+                    ["^layouts(/.*|$)", "^views(/.*|$)", "^components(/.*|$)", "^tests(/.*|$)"],
+                    [
+                        "^config(/.*|$)",
+                        "^context(/.*|$)",
+                        "^enums(/.*|$)",
+                        "^helpers(/.*|$)",
+                        "^hooks(/.*|$)",
+                        "^utils(/.*|$)"
+                    ],
+                    ["^assets(/.*|$)"],
+                    // Imports starting with `../`
+                    ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+                    // Imports starting with `./`
+                    ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+                    // Style and methods imports.
+                    ["^.+\\.methods$", "^.+\\.styled$"]
+                ]
+            }
+        ]
     }
 }
